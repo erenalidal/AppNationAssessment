@@ -30,6 +30,9 @@ const updateUser = catchAsync(async (req, res) => {
 });
 
 const deleteUser = catchAsync(async (req, res) => {
+  if (req.user._id.equals(req.params.userId)) {
+    throw new ApiError(httpStatus.METHOD_NOT_ALLOWED, 'User cannot remove self');
+  }
   await userService.deleteUserById(req.params.userId);
   res.status(httpStatus.OK).send();
 });
