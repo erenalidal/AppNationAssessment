@@ -100,7 +100,6 @@ export default {
           limit: itemsPerPage,
           }
         });
-        console.log('response',response)
         this.totalPages = response.data.totalPages;
         this.itemsPerPage = response.data.limit;
         this.page = response.data.page;
@@ -167,7 +166,6 @@ export default {
   watch:{
      page(newPage, oldPage) {
       if(oldPage == newPage) return;
-      console.log('newPage', newPage)
       this.getUsers(newPage, this.itemsPerPage);
     },
   }
