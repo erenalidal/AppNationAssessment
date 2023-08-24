@@ -2,6 +2,7 @@ const morgan = require('morgan');
 const config = require('../config/config');
 const log = require('../config/log');
 
+// @ts-ignore
 morgan.token('message', (req, res) => res.locals.errorMessage || '');
 
 const getIpFormat = () => (config.env === 'production' ? ':remote-addr - ' : '');
