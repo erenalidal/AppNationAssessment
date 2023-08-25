@@ -15,6 +15,6 @@ export function registerPlugins(app) {
     .use(vuetify)
     .use(router)
     .use(axios, {
-      baseUrl: 'http://localhost:3000/v1/',
+      baseUrl: import.meta.env.VITE_API_BASE_URL,
     })
 }
