@@ -6,3 +6,5 @@ node_modules
 
 # OS file
 .DS_Store
+
+!.env.example
